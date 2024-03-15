@@ -75,7 +75,7 @@ if [ "$DC_RDBMS" == "mariadb" ]; then
     sed -i '/^##-- PGSQL BEGIN --##$/,/##-- PGSQL END --##/d' docker-compose.yml
     sed -i '/^##-- MYSQL BEGIN --##$/,/##-- MYSQL END --##/d' docker-compose.yml
     sed -i "s|PGSQL_DB_HOST=.*|PGSQL_DB_HOST=|g" ./src/.env
-    sed -i "s|MYSQL_DB_HOST=.*|PGSQL_DB_HOST=|g" ./src/.env
+    sed -i "s|MYSQL_DB_HOST=.*|MYSQL_DB_HOST=|g" ./src/.env
     sed -i '/## PostgreSQL Configurations/d' .env
     sed -i '/## MySQL Configurations/d' .env
     sed -i '/DC_PGSQL_DB_*/d' .env
@@ -86,7 +86,7 @@ if [ "$DC_RDBMS" == "mysql" ]; then
     sed -i '/^##-- PGSQL BEGIN --##$/,/##-- PGSQL END --##/d' docker-compose.yml
     sed -i '/^##-- MARIADB BEGIN --##$/,/##-- MARIADB END --##/d' docker-compose.yml
     sed -i "s|PGSQL_DB_HOST=.*|PGSQL_DB_HOST=|g" ./src/.env
-    sed -i "s|MARIADB_DB_HOST=.*|PGSQL_DB_HOST=|g" ./src/.env
+    sed -i "s|MARIADB_DB_HOST=.*|MARIADB_DB_HOST=|g" ./src/.env
     sed -i '/## PostgreSQL Configurations/d' .env
     sed -i '/## MariaDB Configurations/d' .env
     sed -i '/DC_PGSQL_DB_*/d' .env
@@ -97,7 +97,7 @@ if [ "$DC_RDBMS" == "pgsql" ]; then
     sed -i '/^##-- MYSQL BEGIN --##$/,/##-- MYSQL END --##/d' docker-compose.yml
     sed -i '/^##-- MARIADB BEGIN --##$/,/##-- MARIADB END --##/d' docker-compose.yml
     sed -i "s|MYSQL_DB_HOST=.*|MYSQL_DB_HOST=|g" ./src/.env
-    sed -i "s|MARIADB_DB_HOST=.*|MYSQL_DB_HOST=|g" ./src/.env
+    sed -i "s|MARIADB_DB_HOST=.*|MARIADB_DB_HOST=|g" ./src/.env
     sed -i '/## MySQL Configurations/d' .env
     sed -i '/## MariaDB Configurations/d' .env
     sed -i '/DC_MYSQL_DB_*/d' .env
