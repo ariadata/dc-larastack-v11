@@ -63,7 +63,7 @@ services:
       - larastack-network-changeme
 
   redis:
-    image: 'redis:7-bookworm'
+    image: 'redis:7-alpine'
     container_name: ${COMPOSE_PROJECT_NAME}_redis
     restart: unless-stopped
     user: "${UID:-1000}:${GID:-1000}"
